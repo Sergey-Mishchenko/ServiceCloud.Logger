@@ -5,37 +5,45 @@ namespace ServiceCloud.Logger.Test {
     [TestFixture]
     public class ITextFileLoggerTests {
 
-        abstract class TestObject { }    // абстрактный класс Product
-        abstract class CreatorTestObject {   // абстрактный класс Creator
-
-            public abstract TestObject FilePath();         
+        abstract class CreatorTestObject {   
+            public abstract TestObject FactoryMethod();
         }
 
         class CreatorTestObjectA : CreatorTestObject {
-            public override TestObject FilePath() {                 
-                return new TestObject_A(); 
+            public CreatorTestObjectA() { }
+
+            public override TestObject FactoryMethod() {
+                return new TestObjectA();
             }
         }
 
-        class TestObject_A : TestObject {
-            string path = @"D:\Source\Patterns & Delegate & OOP\Factory Method";
-            public string FilePath {
+        abstract class TestObject {
+            public abstract string FilePath { get; }
+        }
+
+        class TestObjectA : TestObject {
+            private readonly string path;
+
+            public TestObjectA() {
+                path = @"D:\Source\Patterns & Delegate & OOP\Factory Method";
+
+            }
+
+            public override string FilePath {
                 get { return path; }
             }
         }
 
-        class TestObject1 : TestObject { }
-
         [Test]
         public void ITextFileLogger_FilePath_checkDefaultValue_Test() {
+
             CreatorTestObject c = new CreatorTestObjectA();
-            TestObject target = c.FilePath;
+            TestObject some_object = new TestObjectA();
+            string result = some_object.FilePath;
 
-
-
-            //target.FilePath;
-            //Assert.IsNotNull(result);
-            //Assert.AreNotEqual("", result);
+           
+            Assert.IsNotNull(result);
+            Assert.AreNotEqual("", result);
         }
 
 
