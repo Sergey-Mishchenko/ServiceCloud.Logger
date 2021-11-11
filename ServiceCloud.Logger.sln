@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceCloud.Logger", "ServiceCloud.Logger\ServiceCloud.Logger.csproj", "{7B5D379C-1669-4C9F-8A09-9FDCC41DFC86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceCloud.Logger.Test", "ServiceCloud.Logger.Test\ServiceCloud.Logger.Test.csproj", "{F8F9D056-7ADC-4327-9340-6528DD652F81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B5D379C-1669-4C9F-8A09-9FDCC41DFC86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5D379C-1669-4C9F-8A09-9FDCC41DFC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5D379C-1669-4C9F-8A09-9FDCC41DFC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5D379C-1669-4C9F-8A09-9FDCC41DFC86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8F9D056-7ADC-4327-9340-6528DD652F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F9D056-7ADC-4327-9340-6528DD652F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F9D056-7ADC-4327-9340-6528DD652F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F9D056-7ADC-4327-9340-6528DD652F81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D8748FC-9B1A-450F-B889-0614139428D7}
+	EndGlobalSection
+EndGlobal
