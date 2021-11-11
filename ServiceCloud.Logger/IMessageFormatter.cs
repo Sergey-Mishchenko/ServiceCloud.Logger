@@ -4,6 +4,6 @@ using System.Text;
 
 namespace ServiceCloud.Logger {
     public interface IMessageFormatter {
-       // string Format(int level, string message);
+        string Format(int level, string message);
     }
 }
