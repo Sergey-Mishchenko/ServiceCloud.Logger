@@ -7,50 +7,16 @@ namespace ServiceCloud.Logger {
     [TestFixture]
     public class SimpleMessageFormatterTests {
 
-        [Test]
-        public void SimpleMessageFormatter_Format_ReturnValueSrting_Test() {
-            IMessageFormatter simple = new SimpleMessageFormatter();
-            string target = simple.Format(2, "SomeMessage");
+        [TestCase(1,"")]
+        [TestCase(0,"someMessage")]
+        [TestCase(-1,null)]
+        public void SimpleMessageFormatter_Format_Test(int level, string mess) {
+            IMessageFormatter target = new SimpleMessageFormatter();
 
-            Assert.IsInstanceOf<string>(target);
-        }
+            string result = target.Format(level, mess);
+            string expected = level+ ": " + mess;
 
-
-        [Test]
-        public void SimpleMessageFormatter_Format_FormatDefault_Test() {
-            IMessageFormatter simple = new SimpleMessageFormatter();
-            string messageResult = simple.Format(4, "");
-            bool target = true;
-
-            string[] messageArray = messageResult.Split(':');
-            string leftMessage = messageArray[0];
-
-            string rightMessage = null;
-            if(messageArray.Length > 1) {
-                for(int i = 1 ; i < messageArray.Length ; i++) {
-                    rightMessage = rightMessage + ":" + messageArray[i].ToString();
-                }
-            } else {
-                target = false;
-            }
-
-            if(rightMessage == null) {
-                target = false;
-                rightMessage = "fakeRightMessage";
-            }
-
-            string whitespace = rightMessage.Substring(0, 2);
-            if(whitespace == ": ") {
-                rightMessage = rightMessage.Substring(2, rightMessage.Length - 2);
-            } else {
-                target = false;
-            }
-
-            if(leftMessage.Length == 0 || rightMessage.Length == 0) {
-                target = false;
-            }
-
-            Assert.IsFalse(target);
+            Assert.AreEqual(expected, result);
         }
     }
 }

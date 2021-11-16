@@ -31,14 +31,12 @@ namespace ServiceCloud.Logger.Test {
             Assert.IsFalse(string.IsNullOrEmpty(target.MessageDelimiter));
         }
 
-
         [Test]
         public void ITextFileLogger_MessageFormatter_DefaultValue_Test() {
             ITextFileLogger ftLogger = CreateTestObject();
 
             Assert.IsNotNull(ftLogger.MessageFormatter);
         }
-
 
         [Test]
         public void ITextFileLogger_MessageFormatter_SetCorrectValue_Test() {
@@ -50,14 +48,11 @@ namespace ServiceCloud.Logger.Test {
             Assert.AreEqual(expected, target.MessageFormatter);
         }
 
-        
         [Test]
         public void ITextFileLogger_MessageFormatter_SetIncorrectValue_Test() {
             ITextFileLogger target = CreateTestObject();
 
-            Assert.Catch<ArgumentNullException>(() => target.MessageFormatter.Format(2,"someMessage")); ;
+            Assert.Catch<ArgumentNullException>(() => target.MessageFormatter = null) ;
         }
-
-
     }
 }
