@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ServiceCloud.Logger {
-
+namespace ServiceCloud.Logger
+{
     public class SimpleMessageFormatter : IMessageFormatter {
         /// <summary>
         /// Реализаця интерфейса IMessageFormatter
